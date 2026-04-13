@@ -3,7 +3,7 @@
   Course:        Web Development 9
   Teacher:       Mr. Hardman
   School:        Pembina Trails Collegiate
-  Date Last Modified: March 12, 2026
+  Date Last Modified: April 12, 2026
 -->
 
 <!doctype html>
@@ -11,130 +11,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- External stylesheet is in its own css/ folder for organisation -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--
+      Internal styles: these IDs (#what, #why, #map, #map-wrapper)
+      only exist on this page, so they belong here rather than in
+      the shared external stylesheet.
+    -->
+    <style>
+      /* Background colours for each content section */
+      #what {
+        background-color: #f5f0e8;
+      }
+      #why {
+        background-color: #ede6d6;
+      }
+      #map {
+        background-color: #e4daca;
+      }
+
+      /* Wrapper that adds a decorative border around the map iframe */
+      #map-wrapper {
+        margin-top: 20px;
+        border: 2px solid #e8d5a3;
+        border-radius: 8px;
+        overflow: hidden; /* clips the iframe corners to match border-radius */
+      }
+    </style>
+
     <title>Treaty 3</title>
   </head>
 
   <body>
-    <!-- ── HEADER: contains nav and main title ── -->
+    <!-- ── HEADER: sticky nav + hero title ── -->
     <header id="home">
-      <!-- Navigation bar with anchor links -->
+      <!-- Navigation bar with anchor links to each section -->
       <nav>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#negotiation">Where It Was Negotiated</a></li>
-          <li><a href="#map">Treaty Map</a></li>
-          <li><a href="#communities">Communities</a></li>
-          <li><a href="#terms">Historic Terms</a></li>
-          <li><a href="#today">Treaty Today</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="history.html#negotiation">Where It Was Negotiated</a>
+          </li>
+          <li><a href="index.html#map">Treaty Map</a></li>
+          <li><a href="history.html#communities">Communities</a></li>
+          <li><a href="history.html#terms">Historic Terms</a></li>
+          <li><a href="history.html#today">Treaty Today</a></li>
         </ul>
       </nav>
 
-      <!-- Hero title area -->
-      <div class="hero-text">
+      <!--
+        #hero-text is an ID (not a class) because there is only
+        ever one hero title block per page.
+      -->
+      <div id="hero-text">
         <h1>Treaty 3</h1>
-        <p class="tagline">Know the past of the land that you inhabit</p>
+        <!--
+          #tagline is an ID (not a class) because there is only
+          ever one tagline per page.
+        -->
+        <p id="tagline">Know the past of the land that you inhabit</p>
       </div>
     </header>
 
-    <!-- ── MAIN: all page content lives here ── -->
+    <!-- ── MAIN: all page content ── -->
     <main>
       <!-- Section 1: What is Treaty 3 -->
       <section id="what">
-        <div class="container">
-          <div class="section-header">
-            <h3>What is Treaty 3?</h3>
-          </div>
-
-          <div class="section-body">
-            <p>
-              Treaty 3, also known as the
-              <span class="highlight">Northwest Angle Treaty</span>, was signed
-              in 1873 between the Canadian Crown and the Ojibwe (Anishinaabe)
-              peoples of the Lake of the Woods and Rainy River regions in what
-              is now northwestern Ontario and a small part of Manitoba. It was
-              one of the Numbered Treaties negotiated following Confederation,
-              as Canada sought to open the land for settlement and the
-              construction of the Canadian Pacific Railway. Under the treaty,
-              the Ojibwe ceded approximately 55,000 square miles of territory in
-              exchange for promises of reserve lands, annual payments, farming
-              equipment, schools, and the right to continue hunting and fishing
-              on ceded lands. Treaty 3 is particularly notable because the
-              Ojibwe negotiators, led by Chief Powasson and others, pushed back
-              firmly against the Crown's initial terms and secured more
-              favorable conditions than earlier treaties had offered — making it
-              an important moment in Indigenous treaty negotiation history.
-              Today, the treaty area is governed under the framework of the
-              <span class="highlight">Grand Council Treaty #3</span>, which
-              continues to advocate for the rights and interests of its member
-              First Nations.
-            </p>
-          </div>
-        </div>
+        <h3>What is Treaty 3?</h3>
+        <p>
+          Treaty 3, also known as the
+          <span class="highlight">Northwest Angle Treaty</span>, was signed in
+          1873 between the Canadian Crown and the Ojibwe (Anishinaabe) peoples
+          of the Lake of the Woods and Rainy River regions in what is now
+          northwestern Ontario and a small part of Manitoba. It was one of the
+          Numbered Treaties negotiated following Confederation, as Canada sought
+          to open the land for settlement and the construction of the Canadian
+          Pacific Railway. Under the treaty, the Ojibwe ceded approximately
+          55,000 square miles of territory in exchange for promises of reserve
+          lands, annual payments, farming equipment, schools, and the right to
+          continue hunting and fishing on ceded lands. Treaty 3 is particularly
+          notable because the Ojibwe negotiators, led by Chief Powasson and
+          others, pushed back firmly against the Crown's initial terms and
+          secured more favourable conditions than earlier treaties had offered —
+          making it an important moment in Indigenous treaty negotiation
+          history. Today, the treaty area is governed under the framework of the
+          <span class="highlight">Grand Council Treaty #3</span>, which
+          continues to advocate for the rights and interests of its member First
+          Nations.
+        </p>
       </section>
 
       <!-- Section 2: Why People Need to Know -->
       <section id="why">
-        <div class="container">
-          <div class="section-header">
-            <h3>Why Do People Need to Know About Treaty 3?</h3>
-          </div>
-
-          <div class="section-body">
-            <p>
-              People need to know about Treaty 3 because it is an important part
-              of the history and relationship between Indigenous peoples and the
-              government of Canada. The treaty explains how land in parts of
-              northwestern Ontario and southeastern Manitoba was shared between
-              the Canadian government and the Anishinaabe Nation. Understanding
-              Treaty 3 helps people learn about the promises that were made to
-              First Nations, such as land rights, annual payments, and the
-              ability to hunt and fish on traditional lands. It is also
-              important today because these treaties still affect laws, land
-              use, and Indigenous rights in Canada. Learning about it helps
-              people better understand Canadian history and the responsibilities
-              that come from these agreements.
-            </p>
-          </div>
-        </div>
+        <h3>Why Do People Need to Know About Treaty 3?</h3>
+        <p>
+          People need to know about Treaty 3 because it is an important part of
+          the history and relationship between Indigenous peoples and the
+          government of Canada. The treaty explains how land in parts of
+          northwestern Ontario and southeastern Manitoba was shared between the
+          Canadian government and the Anishinaabe Nation. Understanding Treaty 3
+          helps people learn about the promises that were made to First Nations,
+          such as land rights, annual payments, and the ability to hunt and fish
+          on traditional lands. It is also important today because these
+          treaties still affect laws, land use, and Indigenous rights in Canada.
+          Learning about it helps people better understand Canadian history and
+          the responsibilities that come from these agreements.
+        </p>
       </section>
 
       <!-- Section 3: Interactive Map -->
       <section id="map">
-        <div class="container">
-          <div class="section-header">
-            <h3>Map of Treaties</h3>
-          </div>
+        <h3>Map of Treaties</h3>
 
-          <!-- Map iframe wrapper for styling -->
-          <div class="map-wrapper">
-            <iframe
-              src="https://native-land.ca/maps/native-land"
-              width="100%"
-              height="500"
-              style="border: 0"
-              loading="lazy"
-              title="Interactive map of Treaty 3 territory from Native Land Digital"
-              aria-label="Interactive map showing Treaty 3 and surrounding treaty territories"
-            ></iframe>
-          </div>
+        <!--
+          #map-wrapper is an ID (not a class) because this wrapper
+          appears only once on the page.
+ 
+          The iframe uses tabindex="-1" so keyboard users are not
+          trapped inside it when tabbing through the page.
+          Screen-reader users can still reach the map via the link
+          directly below it.
+        -->
+        <div id="map-wrapper">
+          <iframe
+            src="https://native-land.ca/maps/native-land"
+            width="100%"
+            height="500"
+            style="border: 0"
+            loading="lazy"
+            tabindex="-1"
+            title="Interactive map of Treaty 3 territory from Native Land Digital"
+            aria-label="Interactive map showing Treaty 3 and surrounding treaty territories"
+          ></iframe>
         </div>
+
+        <!--
+          Accessible alternative for keyboard and screen-reader users
+          who cannot interact with the iframe directly.
+        -->
+        <p>
+          Can't interact with the map?
+          <a
+            href="https://native-land.ca/maps/native-land"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open it directly on Native Land Digital</a
+          >.
+        </p>
       </section>
     </main>
 
-    <!--FOOTER-->
+    <!-- ── FOOTER ── -->
     <footer>
-      <div class="footer-container">
-        <div class="footer-brand">
-          <h2>Treaty 3 · 1873</h2>
-          <p>
-            Acknowledging the traditional territory of the Anishinaabe
-            (Saulteaux Ojibwe) people. We are all treaty people.
-          </p>
-        </div>
-      </div>
+      <!-- Branding and land acknowledgement -->
+      <section class="footer-brand">
+        <h2>Treaty 3 · 1873</h2>
+        <p>
+          Acknowledging the traditional territory of the Anishinaabe (Saulteaux
+          Ojibwe) people. We are all treaty people.
+        </p>
+      </section>
 
-      <div class="footer-bottom">
+      <!-- Class credit and source links -->
+      <section class="footer-bottom">
         <p>
           © 2026 Ostap Voloshyn — Web Development 9 · Pembina Trails Collegiate
         </p>
@@ -148,10 +189,10 @@
             href="https://native-land.ca"
             target="_blank"
             rel="noopener noreferrer"
-            >Native Land Digital
-          </a>
+            >Native Land Digital</a
+          >
         </p>
-      </div>
+      </section>
     </footer>
   </body>
 </html>

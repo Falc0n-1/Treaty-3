@@ -1,0 +1,239 @@
+<!--
+  Name: Ostap Voloshyn
+  Course: Web Development 9
+  Teacher: [Your Teacher's Name]
+  School: Pembina Trails Collegiate
+  Date Last Modified: April 12, 2026
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--
+      Internal styles: these IDs only exist on this page so they belong
+      here instead of in the shared external stylesheet.
+    -->
+    <style>
+      /* Background colours for each section on this page */
+      #negotiation {
+        background-color: #f5f0e8;
+      }
+      #communities {
+        background-color: #ede6d6;
+      }
+      #terms {
+        background-color: #f5f0e8;
+      }
+      #today {
+        background-color: #ede6d6;
+      }
+
+      /* The terms list is styled so it lines up neatly and is easy to read */
+      #terms ul {
+        list-style: disc;
+        padding-left: 2.4rem; /* indents the list away from the section edge */
+        max-width: 75rem;
+        line-height: 2; /* extra space between list items for readability */
+        font-size: 1.6rem;
+      }
+
+      /* Each list item gets a little space below it to separate it from the next */
+      #terms ul li {
+        margin-bottom: 0.8rem;
+      }
+    </style>
+
+    <title>Treaty 3 — History &amp; Communities</title>
+  </head>
+
+  <body>
+    <!-- ── HEADER: sticky nav and hero title for page 2 ── -->
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="history.html#negotiation">Where It Was Negotiated</a>
+          </li>
+          <li><a href="index.html#map">Treaty Map</a></li>
+          <li><a href="history.html#communities">Communities</a></li>
+          <li><a href="history.html#terms">Historic Terms</a></li>
+          <li><a href="history.html#today">Treaty Today</a></li>
+        </ul>
+      </nav>
+
+      <div id="hero-text">
+        <h1>History &amp; Communities</h1>
+        <p id="tagline">The people, the place, and the promises</p>
+      </div>
+    </header>
+
+    <!-- ── MAIN ── -->
+    <main>
+      <!-- Section 1: Where It Was Negotiated -->
+      <section id="negotiation">
+        <h3>Where Was Treaty 3 Negotiated?</h3>
+        <p>
+          Treaty 3 was signed on
+          <span class="highlight">October 3, 1873</span>, at the Northwest Angle
+          of Lake of the Woods, which is located in what is now the state of
+          Minnesota in the United States. The Canadian government had been
+          trying to reach an agreement with the Anishinaabe peoples for several
+          years before the treaty was finally signed. Ojibwe leaders, including
+          <span class="highlight">Chief Powasson</span>, repeatedly rejected the
+          Crown's early offers and negotiated for better conditions. Because of
+          their determination, the Anishinaabe secured terms that were more
+          favourable than those in the earlier Treaty 1 and Treaty 2. The
+          Northwest Angle was chosen as the signing location because it was
+          accessible to both Crown representatives and the many Anishinaabe
+          communities spread across the Lake of the Woods and Rainy River
+          regions.
+        </p>
+
+        <!-- This image from Wikimedia Commons shows the general Lake of the Woods area -->
+        <img
+          src="Images/Lake_of_the_Woods_by_Sentinel-2.jpg"
+          alt="Aerial satellite view of Lake of the Woods and the surrounding region where Treaty 3 was negotiated"
+          width="700"
+          style="
+            max-width: 100%;
+            border: 0.2rem solid #d4c9b0;
+            border-radius: 0.8rem;
+            margin-top: 2rem;
+          "
+        />
+      </section>
+
+      <!-- Section 2: Communities Involved -->
+      <section id="communities">
+        <h3>Communities Involved in Treaty 3</h3>
+        <p>
+          The
+          <span class="highlight">Grand Council Treaty #3</span> currently
+          represents <span class="highlight">28 First Nations</span>, all of
+          which are Anishinaabe (Ojibwe or Saulteaux) peoples. These communities
+          are located across northwestern Ontario and a small part of
+          southeastern Manitoba. Some of the First Nations included under the
+          treaty are Rainy Lake First Nation, Lac La Croix First Nation,
+          Naotkamegwanning First Nation (also known as Whitefish Bay), Wauzhushk
+          Onigum Nation, Big Grassy River First Nation, Grassy Narrows First
+          Nation (Asubpeeschoseewagong), and Shoal Lake 40 First Nation. All of
+          these communities share an Anishinaabe heritage and language, and they
+          are all governed under the framework of the Grand Council Treaty #3,
+          which advocates for their rights and interests.
+        </p>
+      </section>
+
+      <!-- Section 3: Historic Terms of the Treaty -->
+      <section id="terms">
+        <h3>Historic Terms of the Treaty</h3>
+        <p>
+          Treaty 3 included a number of important promises from the Canadian
+          Crown to the Ojibwe peoples. The Ojibwe agreed to share their
+          territory, and in exchange the Crown agreed to the following
+          conditions:
+        </p>
+
+        <ul>
+          <li>
+            The Ojibwe shared approximately
+            <strong>55,000 square miles</strong> of land with the Canadian
+            Crown.
+          </li>
+          <li>
+            Each family of five would receive
+            <strong>one square mile (640 acres)</strong> of reserve land.
+          </li>
+          <li>
+            Every person would receive an annual payment of <strong>$5</strong>,
+            chiefs would receive <strong>$25</strong>, and headmen would receive
+            <strong>$15</strong>.
+          </li>
+          <li>
+            The Ojibwe kept the right to <strong>hunt and fish</strong> on
+            unoccupied Crown lands.
+          </li>
+          <li>
+            The government promised to build <strong>schools</strong> on
+            reserves.
+          </li>
+          <li>
+            Farming tools, cattle, and seeds were to be provided to support
+            agriculture on reserves.
+          </li>
+          <li>Ammunition and twine would be provided each year.</li>
+        </ul>
+
+        <p>
+          One thing that makes Treaty 3 different from earlier numbered treaties
+          is that there were many
+          <span class="highlight">"outside promises"</span> — things the
+          government verbally agreed to but never wrote into the treaty
+          document. These included promises about medicine chests, pest
+          protection, and famine relief. Because they were not written down,
+          these promises were later disputed, which became a major source of
+          conflict between the Ojibwe and the Canadian government in the years
+          that followed.
+        </p>
+      </section>
+
+      <!-- Section 4: Treaty Today -->
+      <section id="today">
+        <h3>How Is Treaty 3 Being Implemented Today?</h3>
+        <p>
+          Today, the rights and responsibilities of Treaty 3 are managed through
+          the
+          <span class="highlight">Grand Council Treaty #3</span>, which serves
+          as the political and governing body for its 28 member First Nations.
+          Land claims, resource rights, and self-governance are ongoing
+          discussions that continue to shape the relationship between the member
+          nations and the Canadian government. One important area of treaty
+          implementation today is the development of
+          <span class="highlight">urban reserves</span>. Urban reserves allow
+          First Nations to establish businesses and economic developments on
+          treaty land near cities, which helps communities benefit financially
+          while maintaining a connection to their traditional territories. For
+          example, some Treaty 3 communities have developed gas stations,
+          convenience stores, and other businesses that generate revenue for
+          their members. The treaty relationship also plays a role in decisions
+          about natural resource extraction, environmental protection, and land
+          use across the region, as First Nations have rights to be consulted
+          before development takes place on their traditional lands.
+        </p>
+      </section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <section class="footer-brand">
+        <h2>Treaty 3 · 1873</h2>
+        <p>
+          Acknowledging the traditional territory of the Anishinaabe (Saulteaux
+          Ojibwe) people. We are all treaty people.
+        </p>
+      </section>
+
+      <section class="footer-bottom">
+        <p>
+          © 2026 Ostap Voloshyn Web Development 9  Pembina Trails Collegiate
+        </p>
+        <p>
+          Sources:
+          <a href="https://gct3.ca" target="_blank" rel="noopener noreferrer"
+            >Grand Council Treaty #3</a
+          >
+          ·
+          <a
+            href="https://native-land.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Native Land Digital</a
+          >
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>

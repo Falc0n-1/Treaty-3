@@ -1,0 +1,179 @@
+/* style.css - Treaty 3 website. Styles only used on one page are inside a style tag in that HTML file. */
+ 
+ 
+/* All my colours are stored as variables here so I only need to change them in one place */
+:root {
+  --color-primary: #6b4814;
+  --color-accent: #e8d5a3;
+  --color-dark: #1a1a18;
+  --color-text: #2c2c2c;
+  --color-text-muted: #c8c2b4;
+  --color-bg-1: #f5f0e8;
+  --color-bg-2: #ede6d6;
+  --color-bg-3: #e4daca;
+  --color-border: #d4c9b0;
+}
+ 
+ 
+/* This makes 1rem equal to 10px so rem math is easier */
+html {
+  font-size: 62.5%;
+}
+ 
+ 
+/* Sets the font, colour, spacing, and background for all text on the page */
+body {
+  font-family: Georgia, serif;
+  color: var(--color-text);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  word-spacing: 0.05em;
+  letter-spacing: 0.01em;
+  background-color: var(--color-bg-1);
+  margin: 0; /* stops white from showing around the edges of the page */
+}
+ 
+ 
+/* Each heading has a different size so you can tell which one is more important */
+h1 {
+  font-size: 6rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+ 
+h2 {
+  font-size: 2.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+ 
+h3 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+ 
+p {
+  margin-bottom: 1.5rem;
+}
+ 
+ 
+/* Links are brown and turn black when you hover over them */
+a {
+  color: var(--color-primary);
+}
+ 
+a:hover {
+  color: black;
+}
+ 
+ 
+/* Makes important words bold and brown so they stand out */
+.highlight {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+ 
+ 
+/* The gradient makes the background photo darker so the heading text is readable */
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url('https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1400');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 10rem 2rem;
+}
+ 
+/* Styles the small italic line under the main title */
+#tagline {
+  color: #aaa;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+ 
+ 
+/* Makes the nav stay at the top of the screen when you scroll */
+nav {
+  background-color: var(--color-dark);
+  border-bottom: 0.2rem solid var(--color-accent);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+ 
+/* display flex makes the nav links go side by side instead of stacking vertically */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+}
+ 
+/* display block makes the whole padded area around each link clickable not just the text */
+nav ul li a {
+  display: block;
+  padding: 1.5rem 1.2rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+ 
+nav ul li a:hover {
+  color: white;
+}
+ 
+ 
+/* All sections share the same padding and a bottom border to separate them */
+section {
+  padding: 6rem 2rem;
+  border-bottom: 0.1rem solid var(--color-border);
+}
+ 
+/* Stops paragraphs from getting too wide so they are easier to read */
+section > p {
+  max-width: 75rem;
+  line-height: 1.9;
+}
+ 
+ 
+/* Dark background for the footer so it looks separate from the rest of the page */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-text-muted);
+  padding: 4.8rem 2rem 0 2rem;
+}
+ 
+footer section h2 {
+  color: var(--color-accent);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+ 
+footer section p {
+  color: var(--color-text-muted);
+  font-size: 1.6rem;
+}
+ 
+ 
+/* display flex puts the two paragraphs side by side and space-between pushes one to each end */
+.footer-bottom {
+  margin-top: 4rem;
+  padding: 1.6rem 0;
+  border-top: 0.1rem solid #333;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  color: #555;
+}
+ 
+.footer-bottom a {
+  color: var(--color-accent);
+}
+ 
+.footer-bottom a:hover {
+  color: white;
+}

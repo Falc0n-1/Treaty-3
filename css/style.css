@@ -1,0 +1,289 @@
+/* style.css - Treaty 3 website. Styles only used on one page are inside a style tag in that HTML file. */
+
+/* All colours are stored as variables so they only need to be changed in one place.
+   Dark green and silver were chosen to reflect the boreal forests of the Treaty 3 territory. */
+:root {
+  --color-primary:    #0a3528; /* dark forest green used for headings and highlights */
+  --color-accent:     #d8d8d8; /* silver used for nav links, footer, and decorative borders */
+  --color-dark:       #071f17; /* near-black green used for nav and footer backgrounds */
+  --color-text:       #1c1c1c; /* off-black used for body text on light backgrounds */
+  --color-text-muted: #d4e0cc; /* light sage used for text on dark backgrounds */
+  --color-bg-1:       #faf7f2; /* soft cream used as the main section background */
+  --color-bg-2:       #f2ece2; /* slightly darker cream used for alternating sections */
+  --color-bg-3:       #e8e0d4; /* warm tan used for the map section background */
+  --color-border:     #d4c9b8; /* muted tan used for section dividers and image borders */
+}
+
+/* Sets 1rem equal to 10px so rem calculations are easier throughout the stylesheet */
+html {
+  font-size: 62.5%;
+}
+
+/* Sets the default font, colour, and spacing for all text on every page */
+body {
+  font-family: Georgia, serif; /* serif font chosen for a formal, respectful tone */
+  color: var(--color-text); /* off-black text on light backgrounds for high contrast */
+  font-size: 1.6rem; /* 16px default size for comfortable reading */
+  line-height: 1.9; /* generous line height improves readability for long paragraphs */
+  word-spacing: 0.16em; /* meets WCAG minimum recommended word spacing for accessibility */
+  letter-spacing: 0.12em; /* meets WCAG minimum recommended letter spacing for accessibility */
+  background-color: var(--color-bg-1); /* cream background for the whole page */
+  margin: 0; /* removes default browser margin so the layout fills edge to edge */
+}
+
+/* Heading sizes create a clear visual hierarchy so users can scan the page */
+h1 {
+  font-size: 6rem; /* largest heading used only for the hero title */
+  color: var(--color-accent); /* silver stands out on the dark hero image */
+  margin-bottom: 1rem; /* space below the heading before the next element */
+  letter-spacing: 0.03em; /* slightly wider spacing makes the large title easier to read */
+}
+
+h2 {
+  font-size: 2.8rem; /* second-level heading used in the footer */
+  color: var(--color-primary); /* dark green matches the overall colour scheme */
+  margin-bottom: 1rem; /* space below the heading */
+}
+
+h3 {
+  font-size: 2.4rem; /* third-level heading used for section titles */
+  color: var(--color-primary); /* dark green for consistent heading colour */
+  margin-bottom: 1.5rem; /* slightly more space below to separate it from paragraph text */
+}
+
+h4 {
+  font-size: 1.8rem; /* fourth-level heading used for card titles */
+  color: var(--color-primary); /* dark green keeps heading colours consistent */
+  margin-bottom: 1rem; /* space below the heading */
+}
+
+p {
+  margin-bottom: 1.5rem; /* space between paragraphs for readability */
+}
+
+/* Link colours follow the LVHA order: link, visited, hover, focus, active */
+a:link {
+  color: var(--color-primary); /* dark green for unvisited links */
+  -webkit-transition: color 0.3s ease; /* smooth colour change for Safari */
+  -moz-transition: color 0.3s ease; /* smooth colour change for Firefox */
+  -o-transition: color 0.3s ease; /* smooth colour change for Opera */
+  transition: color 0.3s ease; /* smooth colour change on hover for all browsers */
+}
+
+a:visited {
+  color: #1a5c3a; /* slightly lighter green so visited links are distinguishable */
+}
+
+a:hover {
+  color: #000; /* black on hover gives clear visual feedback */
+}
+
+a:focus {
+  outline: 2px solid var(--color-accent); /* silver outline makes keyboard focus visible */
+  color: #000; /* black matches the hover colour for consistency */
+}
+
+a:active {
+  color: var(--color-primary); /* dark green when the link is being clicked */
+}
+
+/* Wraps important terms in bold dark green so they stand out from body text */
+.highlight {
+  color: var(--color-primary); /* dark green draws attention to key terms */
+  font-weight: bold; /* bold weight adds extra emphasis */
+}
+
+/* The header uses relative positioning so the hero text can be placed on top of the image */
+header {
+  position: relative; /* establishes positioning context for the absolutely positioned hero text */
+  text-align: center; /* centres the hero text horizontally */
+  padding: 0; /* removes default padding so the image fills the full header */
+  overflow: hidden; /* clips the image so it does not spill outside the header */
+}
+
+/* The hero image fills the full width of the header */
+#hero-img {
+  width: 100%; /* stretches the image to the full page width */
+  height: 50rem; /* fixed height keeps the header a consistent size on all pages */
+  object-fit: cover; /* crops the image to fill the area without distorting it */
+  object-position: center; /* keeps the centre of the image in view when cropped */
+  display: block; /* removes the small gap below the image that inline elements create */
+  filter: brightness(0.45); /* darkens the image so the white hero text is readable on top */
+}
+
+/* The hero text is centred over the image using absolute positioning and transform */
+#hero-text {
+  position: absolute; /* takes the text out of normal flow so it can sit on top of the image */
+  top: 50%; /* moves the top edge of the element to the vertical centre of the header */
+  left: 50%; /* moves the left edge of the element to the horizontal centre of the header */
+  -webkit-transform: translate(-50%, -50%); /* centres the element for Safari */
+  -moz-transform: translate(-50%, -50%); /* centres the element for Firefox */
+  -ms-transform: translate(-50%, -50%); /* centres the element for IE */
+  -o-transform: translate(-50%, -50%); /* centres the element for Opera */
+  transform: translate(-50%, -50%); /* shifts the element left and up by half its own size to truly centre it */
+  -webkit-animation: fadeInDown 1s ease; /* fade-in animation for Safari */
+  -moz-animation: fadeInDown 1s ease; /* fade-in animation for Firefox */
+  animation: fadeInDown 1s ease; /* hero text fades in and slides down when the page loads */
+}
+
+/* Keyframes for the hero text fade-in animation */
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0; /* starts fully transparent */
+    -webkit-transform: translate(-50%, -60%); /* starts slightly higher than final position */
+  }
+  to {
+    opacity: 1; /* ends fully visible */
+    -webkit-transform: translate(-50%, -50%); /* ends in the centred position */
+  }
+}
+@-moz-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -moz-transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    -moz-transform: translate(-50%, -50%);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Small italic subtitle displayed below the main hero heading */
+#tagline {
+  color: #ccc; /* light grey is readable on the dark hero image */
+  font-style: italic; /* italic style distinguishes the tagline from the main heading */
+  font-size: 1.8rem; /* slightly smaller than body text to sit below the h1 in the hierarchy */
+}
+
+/* The nav sticks to the top of the viewport so users can navigate without scrolling back up */
+nav {
+  background-color: var(--color-dark); /* dark background separates the nav from the page content */
+  border-bottom: 0.2rem solid var(--color-accent); /* silver line visually separates the nav from the hero */
+  position: sticky; /* keeps the nav at the top of the screen as the user scrolls */
+  top: 0; /* sticks the nav to the very top of the viewport */
+  z-index: 100; /* keeps the nav above all other page content when scrolling */
+}
+
+/* Flexbox lays out the nav links horizontally instead of stacking them vertically */
+nav ul {
+  list-style: none; /* removes the default bullet points from the list */
+  display: -webkit-box; /* flexbox for old Safari */
+  display: -moz-box; /* flexbox for old Firefox */
+  display: -ms-flexbox; /* flexbox for IE 10 */
+  display: -webkit-flex; /* flexbox for newer Safari */
+  display: flex; /* lays nav items out in a horizontal row */
+  -webkit-flex-wrap: wrap; /* allows links to wrap to a second line on small screens for Safari */
+  -ms-flex-wrap: wrap; /* allows wrapping for IE */
+  flex-wrap: wrap; /* allows links to wrap to a second line on small screens */
+  padding: 0 2rem; /* side padding keeps the links away from the edges of the screen */
+  margin: 0; /* removes default list margin */
+}
+
+/* display block makes the entire padded area of each link clickable, not just the text */
+nav ul li a:link,
+nav ul li a:visited {
+  display: block; /* expands the clickable area to fill the full padded li */
+  padding: 1.5rem 1.2rem; /* top/bottom padding creates a comfortable click target height */
+  color: var(--color-accent); /* silver links are visible on the dark nav background */
+  text-decoration: none; /* removes the default underline from nav links */
+  font-size: 1.6rem; /* matches the body font size for consistency */
+  text-transform: uppercase; /* uppercase letters give the nav a clean modern look */
+  letter-spacing: 0.08em; /* extra spacing between uppercase letters improves readability */
+  -webkit-transition: color 0.3s ease, background-color 0.3s ease; /* smooth hover for Safari */
+  -moz-transition: color 0.3s ease, background-color 0.3s ease; /* smooth hover for Firefox */
+  -o-transition: color 0.3s ease, background-color 0.3s ease; /* smooth hover for Opera */
+  transition: color 0.3s ease, background-color 0.3s ease; /* colour fades smoothly on hover */
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #faf7f2; /* cream colour gives clear hover feedback on the dark nav */
+  outline: none; /* removes the default focus outline since colour change provides feedback */
+}
+
+nav ul li a:active {
+  color: #fff; /* white when the link is being clicked */
+  opacity: 0.7; /* slight transparency gives a pressed visual effect */
+}
+
+/* All sections share the same padding and a bottom border to visually separate them */
+section {
+  padding: 6rem 2rem; /* generous top/bottom padding gives each section breathing room */
+  border-bottom: 0.1rem solid var(--color-border); /* subtle line separates each section */
+  -webkit-transition: box-shadow 0.3s ease; /* smooth shadow on hover for Safari */
+  -moz-transition: box-shadow 0.3s ease; /* smooth shadow on hover for Firefox */
+  -o-transition: box-shadow 0.3s ease; /* smooth shadow on hover for Opera */
+  transition: box-shadow 0.3s ease; /* silver left border fades in smoothly on hover */
+}
+
+/* A silver inset border appears on the left of a section when the user hovers over it */
+section:hover {
+  -webkit-box-shadow: inset 0.4rem 0 0 var(--color-accent); /* inset border for Safari */
+  -moz-box-shadow: inset 0.4rem 0 0 var(--color-accent); /* inset border for Firefox */
+  box-shadow: inset 0.4rem 0 0 var(--color-accent); /* silver left accent appears on hover */
+}
+
+/* Limits paragraph width so long lines do not become hard to read */
+section > p {
+  max-width: 75rem; /* keeps lines at a comfortable reading length */
+  line-height: 1.9; /* generous spacing between lines for readability */
+  overflow: visible; /* allows content to be visible if it exceeds the container */
+  white-space: normal; /* allows text to wrap naturally */
+  word-break: normal; /* prevents words from breaking mid-character unless necessary */
+  text-indent: 0; /* no indent on the first line of paragraphs */
+}
+
+/* Dark footer background visually separates it from the main page content */
+footer {
+  background-color: var(--color-dark); /* dark green background matches the nav */
+  color: var(--color-text-muted); /* light sage text is readable on the dark background */
+  padding: 4.8rem 2rem 0 2rem; /* top and side padding gives the footer content breathing room */
+}
+
+footer section h2 {
+  color: var(--color-accent); /* silver heading stands out on the dark footer background */
+  font-size: 2rem; /* slightly smaller than the main h2 to suit the footer context */
+  margin-bottom: 1rem; /* space below the heading */
+}
+
+footer section p {
+  color: var(--color-text-muted); /* light sage matches the footer text colour */
+  font-size: 1.6rem; /* standard body size for footer text */
+}
+
+/* Flexbox with space-between pushes the copyright and sources to opposite ends */
+.footer-bottom {
+  margin-top: 4rem; /* space above the bottom bar separates it from the footer brand section */
+  padding: 1.6rem 0; /* top and bottom padding around the bottom bar text */
+  border-top: 0.1rem solid #1f3d2a; /* subtle line separates the bottom bar from the footer content */
+  display: -webkit-box; /* flexbox for old Safari */
+  display: -moz-box; /* flexbox for old Firefox */
+  display: -ms-flexbox; /* flexbox for IE 10 */
+  display: -webkit-flex; /* flexbox for newer Safari */
+  display: flex; /* lays the two footer paragraphs side by side */
+  -webkit-justify-content: space-between; /* pushes items to opposite ends for Safari */
+  -ms-flex-pack: justify; /* pushes items to opposite ends for IE */
+  justify-content: space-between; /* copyright on the left, sources on the right */
+  font-size: 1.6rem; /* standard body size */
+  color: var(--color-text-muted); /* light sage matches the rest of the footer text */
+}
+
+.footer-bottom a:link,
+.footer-bottom a:visited {
+  color: var(--color-accent); /* silver links are visible on the dark footer background */
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus {
+  color: #fff; /* white on hover gives clear feedback on the dark background */
+}

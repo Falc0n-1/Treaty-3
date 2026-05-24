@@ -1,0 +1,324 @@
+<!--
+  Name: Ostap Voloshyn
+  Course: Web Development 9
+  Teacher: Mr. Hardman
+  School: Pembina Trails Collegiate
+  Date Last Modified: May 19, 2026
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      #unique {
+        background-color: var(--color-bg-1);
+      }
+      #significance {
+        background-color: var(--color-bg-2);
+      }
+      #legacy {
+        background-color: var(--color-bg-1);
+      }
+
+      /* Fact cards sit side by side using float */
+      .card-container {
+        overflow: hidden;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Each card floats left so they sit in a row */
+      .card {
+        float: left;
+        width: 30%;
+        margin-right: 3%;
+        background-color: var(--color-dark);
+        color: var(--color-text-muted);
+        border: 0.2rem solid var(--color-accent);
+        border-radius: 0.8rem;
+        padding: 2rem;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+
+      /* Last card has no right margin so it doesn't overflow */
+      .card:last-child {
+        margin-right: 0;
+      }
+
+      .card h4 {
+        color: var(--color-accent);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .card p {
+        font-size: 1.5rem;
+        line-height: 1.9;
+        color: var(--color-text-muted);
+      }
+
+      /* Quote block stands out from the rest of the text */
+      .pull-quote {
+        border-left: 0.5rem solid var(--color-accent);
+        margin: 3rem 0;
+        padding: 1.5rem 2.5rem;
+        background-color: var(--color-bg-2);
+        max-width: 75rem;
+        font-style: italic;
+        font-size: 1.8rem;
+        color: var(--color-primary);
+        line-height: 1.9;
+      }
+
+      /* Timeline list styling */
+      .timeline {
+        list-style: none;
+        padding: 0;
+        max-width: 75rem;
+        margin-top: 2rem;
+      }
+
+      /* Each timeline item has a gold left border to show it is part of a sequence */
+      .timeline li {
+        border-left: 0.3rem solid var(--color-accent);
+        padding: 1rem 0 1rem 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.6rem;
+        line-height: 1.9;
+        position: relative;
+      }
+
+      /* The year label sits above each timeline entry */
+      .timeline li span.year {
+        display: block;
+        font-weight: bold;
+        color: var(--color-primary);
+        font-size: 1.7rem;
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    </style>
+
+    <title>Treaty 3 — Why It Matters</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="history.html#negotiation">Where It Was Negotiated</a>
+          </li>
+          <li><a href="index.html#map">Treaty Map</a></li>
+          <li><a href="history.html#communities">Communities</a></li>
+          <li><a href="history.html#terms">Historic Terms</a></li>
+          <li><a href="history.html#today">Treaty Today</a></li>
+          <li><a href="Page3.html">Why It Matters</a></li>
+        </ul>
+      </nav>
+
+      <img
+        src="Images/header.jpg"
+        alt="Northern lights over a lake in the Treaty 3 territory"
+        id="hero-img"
+      />
+
+      <div id="hero-text">
+        <h1>Why It Matters</h1>
+        <p id="tagline">The significance and legacy of Treaty 3</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section 1: What makes Treaty 3 unique -->
+      <section id="unique">
+        <h3>What Makes Treaty 3 Different?</h3>
+        <p>
+          Treaty 3 stands apart from the other numbered treaties in several
+          important ways. Unlike earlier treaties such as
+          <span class="highlight">Treaty 1</span> and
+          <span class="highlight">Treaty 2</span>, the Anishinaabe negotiators
+          refused to accept the Crown's initial offers and pushed back firmly
+          until better terms were secured. This made Treaty 3 one of the most
+          strongly negotiated treaties in Canadian history.
+        </p>
+        <p>
+          One of the most significant differences is the presence of
+          <span class="highlight">outside promises</span> — verbal commitments
+          made by Crown representatives that were never included in the written
+          treaty document. These included promises of medicine chests, famine
+          relief, and protection from pestilence. While other treaties also had
+          outside promises, Treaty 3 is particularly well documented in this
+          regard, and the dispute over these promises has shaped the legal and
+          political relationship between the Anishinaabe and the Crown for over
+          150 years.
+        </p>
+        <p>
+          Treaty 3 also covered a uniquely large and ecologically rich territory
+          — approximately
+          <span class="highlight">55,000 square miles</span> of land centred
+          around the Lake of the Woods, one of the most important waterways in
+          the region. This made the resource rights included in the treaty
+          especially significant.
+        </p>
+
+        <!-- Three key facts displayed in floating cards -->
+        <div class="card-container">
+          <div class="card">
+            <h4>Stronger Negotiation</h4>
+            <p>
+              The Anishinaabe rejected the Crown's first offers multiple times,
+              securing better reserve allocations and annuity payments than
+              earlier treaties provided.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Outside Promises</h4>
+            <p>
+              Verbal commitments about medicine, famine relief, and pest control
+              were made but never written down, creating lasting legal disputes.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Rich Territory</h4>
+            <p>
+              The treaty covered 55,000 square miles of forest and waterway,
+              making hunting and fishing rights especially valuable to
+              Anishinaabe communities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Why it is historically significant -->
+      <section id="significance">
+        <h3>Why Is Treaty 3 Historically Significant?</h3>
+
+        <div class="pull-quote">
+          "We all live on Treaty land. Understanding the promises made — and
+          broken — is the foundation of reconciliation."
+        </div>
+
+        <p>
+          Treaty 3 is historically significant because it set a precedent for
+          how Indigenous peoples could negotiate with the Canadian Crown. The
+          Anishinaabe demonstrated that organized resistance to unfair terms was
+          possible and effective. Their success in securing better conditions
+          influenced how later treaties were approached by both Indigenous
+          nations and the Crown.
+        </p>
+        <p>
+          The treaty is also significant because it covered land that was
+          critical to the construction of the
+          <span class="highlight">Canadian Pacific Railway</span>. Canada needed
+          clear access through Anishinaabe territory to connect eastern and
+          western Canada. This gave the Anishinaabe real negotiating power,
+          which they used effectively.
+        </p>
+        <p>
+          Finally, Treaty 3 is significant because it remains a
+          <span class="highlight">living document</span>. It is not just a piece
+          of history — its terms still have legal force today and continue to
+          shape decisions about land use, resource extraction, and Indigenous
+          rights across northwestern Ontario and southeastern Manitoba.
+        </p>
+
+        <!-- Timeline of key events -->
+        <ul class="timeline">
+          <li>
+            <span class="year">1869–1870</span>
+            The Anishinaabe block access through their territory, giving
+            themselves leverage in negotiations with the Crown.
+          </li>
+          <li>
+            <span class="year">1871</span>
+            The Crown's first offer is rejected by Anishinaabe leaders who
+            demand better terms.
+          </li>
+          <li>
+            <span class="year">1873</span>
+            Treaty 3 is signed at the Northwest Angle of Lake of the Woods after
+            the Anishinaabe secure improved conditions.
+          </li>
+          <li>
+            <span class="year">1990s–present</span>
+            Grand Council Treaty #3 leads ongoing negotiations over resource
+            rights, land claims, and the fulfilment of outside promises.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Section 3: Legacy today -->
+      <section id="legacy">
+        <h3>The Legacy of Treaty 3 Today</h3>
+        <p>
+          The legacy of Treaty 3 is felt across many areas of life in
+          northwestern Ontario and southeastern Manitoba. The
+          <span class="highlight">Grand Council Treaty #3</span> continues to
+          govern the political and cultural affairs of its 28 member First
+          Nations, advocating for land rights, self-governance, and the
+          honouring of treaty promises.
+        </p>
+        <p>
+          One important part of that legacy is the growing network of
+          <span class="highlight">urban reserves</span>. These are pieces of
+          land near cities that have been granted reserve status, allowing First
+          Nations to operate businesses and generate revenue while staying
+          connected to their treaty rights. Urban reserves represent a creative
+          and practical way for Treaty 3 communities to benefit economically
+          from the treaty relationship.
+        </p>
+        <p>
+          Treaty 3 also plays a role in environmental stewardship. Because
+          Anishinaabe peoples have constitutionally protected rights to hunt and
+          fish on their traditional lands, they must be consulted before
+          resource development takes place in the treaty area. This gives First
+          Nations communities a meaningful voice in how the land and water of
+          the Lake of the Woods region is managed and protected.
+        </p>
+        <p>
+          Most broadly, Treaty 3 reminds all Canadians that the land they live
+          on is shared land — land that was never surrendered without promises
+          in return. Honouring those promises is at the heart of reconciliation
+          between Indigenous and non-Indigenous peoples in Canada today.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <section class="footer-brand">
+        <h2>Treaty 3 · 1873</h2>
+        <p>
+          Acknowledging the traditional territory of the Anishinaabe (Saulteaux
+          Ojibwe) people. We are all treaty people.
+        </p>
+      </section>
+
+      <section class="footer-bottom">
+        <p>
+          © 2026 Ostap Voloshyn — Web Development 9 · Pembina Trails Collegiate
+        </p>
+        <p>
+          Sources:
+          <a href="https://gct3.ca" target="_blank" rel="noopener noreferrer"
+            >Grand Council Treaty #3</a
+          >
+          ·
+          <a
+            href="https://native-land.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Native Land Digital</a
+          >
+        </p>
+      </section>
+    </footer>
+  </body>
+</html>
